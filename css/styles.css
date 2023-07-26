@@ -9,27 +9,24 @@ body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.125rem;
     font-weight: 300;
-    color: #707070;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 /* =================
 Typography
 ================= */
 
-h1,
+h1, 
 h2,
-h3{
+h3 {
     font-family: 'Lora', serif;
     font-weight: 400;
     color: #143774;
-}
-
-.subtitle,
-.article-read-more{
-    font-family: "Ubuntu";
-    color: #1792d2;
-    font-weight: 700;
-    letter-spacing: 0.22rem;
+    margin-top: 0;
 }
 
 h1 {
@@ -37,53 +34,52 @@ h1 {
     margin: 0;
 }
 
-h2{
-    font-size: 1.5rem;
+a {
+    color: #1792d2;
 }
 
+a:hover,
+a:focus {
+    color: #143774;
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* h1 subtitle */
 .subtitle {
+    font-weight: 700;
+    color: #1792d2;
     font-size: .75rem;
     margin: 0;
 }
 
-.widget-title{
-    font-family: "Ubuntu";
-    letter-spacing: 0.2rem;
+.article-title {
+    font-size: 1.5rem;
 }
 
-.article-read-more{
-    font-size: 0.875rem;
-    letter-spacing: 3px;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 2rem;
+.article-read-more,
+.article-info {
+    font-size: .875rem;
 }
 
-.article-body> a{
+.article-read-more {
     color: #1792d2;
     text-decoration: none;
-    font-weight: bolder;
+    font-weight: 700;
 }
 
 .article-read-more:hover,
-.article-read-more:focus,
-.article-body > a:hover,
-.article-body >a :focus {
+.article-read-more:focus {
     color: #143774;
     text-decoration: underline;
-    cursor: pointer;
 }
 
-
-.article-info{
-    color: #707070;
-    font-size: 0.875rem;
+.article-info {
+    margin: 2em 0;
 }
 
-
-.widget-body{
-    color: #143774;
-}
 
 /* =================
 Layout
@@ -101,54 +97,26 @@ Layout
     justify-content: space-between;
 }
 
-@media (min-width: 675px) {
-    .container-flex {
-        flex-direction: row;
-    }
-
-    main{
-        width: 73%;
-    }
-    
-    aside{
-        width: 23%;
-    }
-}
-
-
-
 header {
     background: #f8f8f8;
     padding: 2em 0;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3em;
 }
 
-.sidebar-widget{
-    border: 20px solid #EBEBEB;
-    padding: 1rem;
-}
-
-.sidebar-widget-seperated{
-    margin-bottom: 1rem;
-}
-
-
-@media (min-width: 675px ){
-    .article-recent-main{
-        display: flex;
+@media (min-width: 675px) {
+    .container-flex {
         flex-direction: row;
     }
-
-    .article-info-mobile{
-        display: none;
+    
+    main {
+        width: 70%;
     }
-
-    .article-info-title{
-        flex-direction: column;
+    
+    aside {
+        width: 25%;
     }
 }
-
 
 /* navigation */
 
@@ -156,12 +124,11 @@ nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
 nav li {
-    margin: .5em 0;
+    margin-left: 2em;
 }
 
 nav a {
@@ -184,54 +151,67 @@ nav a:focus {
     color: #707070;
 }
 
-@media (min-width: 675px) {
+@media (max-width: 675px) {
     nav ul {
-        flex-direction: row;
+        flex-direction: column;
     }
     
     nav li {
-        margin-left: 2em;
+        margin: .5em 0;
     }
 }
 
+/* articles */
 
-/* .container-main-layout{
-    margin-top: 1rem;
+.article-featured {
+    border-bottom: #707070 1px solid;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+
+.article-recent {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 2em;
 }
 
- */
-
-
-img{
-    max-width: 100%;
-    display: block;
-    margin-bottom: 0px;
+.article-recent-main {
+    order: 2;
 }
 
-
-.article-info-title{
-    margin-top: 0px;
-    display: flex;
-    justify-content: space-between;
+.article-recent-secondary {
+    order: 1;
 }
 
-
-
-.article-info {
-    margin-top: 0px;
+@media (min-width: 675px) {
+    .article-recent {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .article-recent-main {
+        width: 68%;
+    }
+    
+    .article-recent-secondary {
+        width: 30%;
+    }
+    
+    .article-featured {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .article-image {
+        order: -2;
+        min-height: 250px;
+        object-fit: cover;
+        /* object-position: left; */
+    }
+    
+    .article-info {
+        order: -1;
+    }
 }
 
-
-.article-featured{
-    border-bottom: 1px solid gray;
-    margin-bottom: 2rem;
-    padding-bottom: 2px;
-
-}
-
-footer{
-    background-color: #143774;
-    color: #FFFFFF;
-}
+/* wi */
