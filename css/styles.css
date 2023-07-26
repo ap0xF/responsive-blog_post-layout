@@ -80,14 +80,19 @@ strong {
     margin: 2em 0;
 }
 
+.article-body{
+    color: #707070;
+    font-size: 1.125rem;
+}
+
 
 /* =================
 Layout
 ================= */
 
 .container {
-    width: 90%;
-    max-width: 900px;
+    width: 95%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -104,7 +109,14 @@ header {
     margin-bottom: 3em;
 }
 
-@media (min-width: 675px) {
+footer{
+    background: #143774;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (min-width: 725px) {
     .container-flex {
         flex-direction: row;
     }
@@ -151,7 +163,7 @@ nav a:focus {
     color: #707070;
 }
 
-@media (max-width: 675px) {
+@media (max-width: 725px) {
     nav ul {
         flex-direction: column;
     }
@@ -183,7 +195,7 @@ nav a:focus {
     order: 1;
 }
 
-@media (min-width: 675px) {
+@media (min-width: 725px) {
     .article-recent {
         flex-direction: row;
         justify-content: space-between;
@@ -208,10 +220,56 @@ nav a:focus {
         object-fit: cover;
         /* object-position: left; */
     }
+
+    .article-image-center{
+        object-position: left;
+    }
     
     .article-info {
         order: -1;
     }
 }
 
-/* wi */
+/* widget */
+.sidebar-widget{
+    border: 1rem solid #EBEBEB;
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem;
+}
+
+.sidebar-widget-aboutme{
+    margin-bottom: 2.8125rem;
+}
+
+.widget-body{
+    font-size: 0.875rem;
+}
+
+.widget-title {
+    font-size: 1.125rem;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+}
+
+.widget-recent-post-title{
+    font-size: 1.125rem;
+}
+
+.widget-recent-post{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #707070;
+    margin: 1rem;
+}
+
+
+.widget-image{
+    order:-1;
+    /*alternatively i could have set flex-direction of parent to column-reverse*/
+}
+
+.widget-recent-post:last-child{
+    border: 0;
+    margin-bottom: 0px;
+}
